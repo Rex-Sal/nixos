@@ -1,0 +1,81 @@
+{ self, inputs, ... }: {
+
+  flake.nixosModules.niri = { pkgs, lib, ... }: {
+    programs.niri = {
+      enable = true;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+    };
+  };
+	
+  perSystem = { pkgs, lib, self', ... }: {
+    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
+      settings = {
+        spawn-at-startup = [ 
+	  (lib.getExe self'.packages.myNoctalia)
+        ];
+
+        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+	input = {
+		keyboard.xkb.layout = "us, ua";
+		keyboard.numlock = true;
+		touchpad = {
+			tap = _:{};
+			tap-button-map = "left-right-middle";
+			click-method = "button-areas";
+			natural-scroll = _:{};
+			accel-profile = "adaptive";
+			scroll-method = "two-finger";
+			middle-emulation = _:{};
+		};
+		focus-follows-mouse = _:{};
+		warp-mouse-to-focus = _:{};
+	};
+	
+        
+	layout = {
+	  focus-ring.on = _:{};
+	  border = {
+	    width = 3;
+	    active-color = "#A8AEFF";
+	    inactive-color = "505050";
+	  };
+	
+	  
+	  gaps = 3;
+
+	  struts = {
+	    left = 20;
+	    right = 20;
+	    top = 20;
+	    bottom = 20;
+	  };
+	};
+
+	binds = {
+	  "super+Return".spawn-sh = lib.getExe pkgs.kitty;
+	  "super+D".spawn-sh = lib.getExe pkgs.fuzzel;
+	  "super+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+	  "super+Q".close-window = _:{};
+	  "super+F".maximize-column = _:{};
+
+	  "super+H".focus-column-left = _:{};
+	  "super+J".focus-window-down = _:{};
+	  "super+K".focus-window-up = _:{};
+	  "super+L".focus-column-right = _:{};
+	  "super+Left".focus-column-left = _:{};
+	  "super+Down".focus-window-down = _:{};
+	  "super+Up".focus-window-up = _:{};
+	  "super+Right".focus-column-right = _:{};
+
+
+	  "super+Shift+H".move-column-left = _:{};
+	  "super+Shift+J".move-window-down = _:{};
+	  "super+Shift+K".move-window-up = _:{};
+	  "super+Shift+L".move-column-right = _:{};
+	};
+      };
+    };
+  };
+}
