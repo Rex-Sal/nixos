@@ -7,6 +7,8 @@
 	      self.nixosModules.kanata
 	      self.nixosModules.fonts
 	      self.nixosModules.bluetooth
+	      self.nixosModules.steam
+	      self.nixosModules.environment
 	    ];
 
 	  # Bootloader.
@@ -83,13 +85,17 @@
 	  # services.xserver.libinput.enable = true;
 
 	  # Define a user account. Don't forget to set a password with ‘passwd’.
-	  users.users."rxsl" = {
-	    isNormalUser = true;
-	    description = "rxsl";
-	    extraGroups = [ "networkmanager" "wheel" ];
-	    packages = with pkgs; [
-	    #  thunderbird
-	    ];
+	  programs.zsh.enable = true;
+	  users = {
+	    defaultUserShell = pkgs.zsh;
+		    users."rxsl" = {
+			    isNormalUser = true;
+			    description = "rxsl";
+			    extraGroups = [ "video" "audio" "networkmanager" "wheel" "input" "uninput" "libvirtd" ];
+			    packages = with pkgs; [
+			    #  thunderbird
+			    ];
+		  };
 	  };
 
 	  # Install firefox.
