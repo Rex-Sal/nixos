@@ -4,11 +4,11 @@
 		addKeysToAgent = "yes";
 	};
 
-	/*
+	
 	programs.keychain = {
 		enable = true;
 		keys = [ "rxsl_gh" ];
 		extraFlags = [ "--quiet" ];
 	};
-	*/
+	
 }

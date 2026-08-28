@@ -3,6 +3,10 @@
 	  ./kitty.nix
 	  ./connect.nix
 	  ./git.nix
+	  ./zsh.nix
+	  ./lsd/lsd.nix
+	  ./starship/starship.nix
+    	  ./tmux.nix
 	];
 	home = {
 		username = "rxsl";
