@@ -9,6 +9,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    swww.url = "github:LGFae/swww";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
   };
 

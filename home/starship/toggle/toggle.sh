@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-LOCALE="$HOME/nix/home/common/modules/starship/"
+LOCALE="$HOME/nix/home/starship/"
 if [ ! -e "$LOCALE" ]; then
     echo "Error: nixos config not found. Aborting"
     exit 1
@@ -33,6 +33,6 @@ sleep 1
 cp "$LOCALE"/configs/"${files[($selection - 1)]}" "$LOCALE"/starship.toml 
 echo 'Restarting...'
 sleep 1
-home-manager switch --flake ~/nix > /dev/null 2>&1
+sudo nixos-rebuild swith --flake ~/nix.#framework > /dev/null 2>$1
 clear
 

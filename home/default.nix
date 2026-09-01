@@ -7,6 +7,8 @@
 	  ./lsd/lsd.nix
 	  ./starship/starship.nix
     	  ./tmux.nix
+	  ./mako.nix
+	  ./swayidle.nix
 	];
 	home = {
 		username = "rxsl";

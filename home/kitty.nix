@@ -2,10 +2,10 @@
     programs.kitty = {
 	      enable = true;
               # ThemeFile values located at https://github.com/kovidgoyal/kitty-themes/tree/master/themes
-	      #themeFile = "Catppuccin-Mocha";
+	      themeFile = "Catppuccin-Mocha";
               #themeFile = "BirdsOfParadise";
               #themeFile = "Espresso_Libre";
-              themeFile = "GruvboxMaterialDarkMedium";
+              #themeFile = "GruvboxMaterialDarkMedium";
 	      settings = {
 	          enable_audio_bell = false;
 	          confirm_os_window_close = 0;

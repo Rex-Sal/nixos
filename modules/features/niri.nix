@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{ self, inputs, self', lib,  ... }: {
 
   flake.nixosModules.niri = { pkgs, lib, ... }: {
     programs.niri = {
@@ -13,8 +13,9 @@
       settings = {
         spawn-at-startup = [ 
 	  (lib.getExe self'.packages.myNoctalia)
+	  (lib.getExe pkgs.mako)
         ];
-
+	spawn-sh-at-startup = [ "swaybg -i ~/Pictures/amz1x6hewomh1.jpeg -m fill" ];
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
 	input = {
@@ -35,21 +36,27 @@
 	
         
 	layout = {
-	  focus-ring.on = _:{};
+	  focus-ring = {
+		on = _:{};
+		width = 2;
+	 	active-color = "#cba6f7";
+		inactive-color = "#b4befe";
+	  };
+
 	  border = {
-	    width = 3;
-	    active-color = "#A8AEFF";
-	    inactive-color = "505050";
+	    width = 2;
+	    active-color = "#cba6f7";
+	    inactive-color = "#b4befe";
 	  };
 	
 	  
-	  gaps = 3;
+	  gaps = 14;
 
 	  struts = {
 	    left = 20;
 	    right = 20;
-	    top = 20;
-	    bottom = 20;
+	    top = 10;
+	    bottom = 10;
 	  };
 	};
 
@@ -59,6 +66,9 @@
 	  "super+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
 	  "super+Q".close-window = _:{};
 	  "super+F".maximize-column = _:{};
+	  "super+W".toggle-column-tabbed-display = _:{};
+	  "super+T".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
+	
 
 	  "super+H".focus-column-left = _:{};
 	  "super+J".focus-window-down = _:{};
@@ -74,6 +84,18 @@
 	  "super+Shift+J".move-window-down = _:{};
 	  "super+Shift+K".move-window-up = _:{};
 	  "super+Shift+L".move-column-right = _:{};
+
+	  "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+	  "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+	  "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+	  /*
+	  "XF86AudioPrev".spawn-sh = 
+	  "XF86AudioPlay".spawn-sh = 
+	  "XF86AudioNext".spawn-sh = 
+ 	  */
+	  "XF86MonBrightnessDown".spawn-sh = "brightnessctl set 5%-"; 
+	  "XF86MonBrightnessUp".spawn-sh = "brightnessctl set 5%+"; 
+	  "Print".spawn-sh = "niri msg action screenshot";
 	};
       };
     };

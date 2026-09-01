@@ -12,8 +12,8 @@
         plugins = with pkgs; [
             tmuxPlugins.sensible
             tmuxPlugins.vim-tmux-navigator
-            #tmuxPlugins.catppuccin
-            tmuxPlugins.gruvbox
+            tmuxPlugins.catppuccin
+            #tmuxPlugins.gruvbox
             tmuxPlugins.yank
         ];
         extraConfig = 

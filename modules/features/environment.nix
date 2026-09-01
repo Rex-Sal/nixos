@@ -1,4 +1,4 @@
-{ self, inputs, ... }:{
+{ self, inputs, ... }: {
 	flake.nixosModules.environment = { ... }: {
 		
     environment.sessionVariables = {
@@ -21,8 +21,5 @@
         SCREENSHOT_DIR = "$HOME/Pictures/Screenshots";
 	  };
 	};
-}
+ }
 
-
-{
-}
