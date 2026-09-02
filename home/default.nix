@@ -9,6 +9,8 @@
     	  ./tmux.nix
 	  ./mako.nix
 	  ./swayidle.nix
+	  ./chromium.nix
+	  ./nixvim/default.nix
 	];
 	home = {
 		username = "rxsl";

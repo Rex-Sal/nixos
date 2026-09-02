@@ -10,9 +10,12 @@
 				home-manager.useUserPackages = true;
 				home-manager.extraSpecialArgs = {
 					myNoctalia = self.packages."x86_64-linux".myNoctalia;
+					inherit inputs;
 				};
 				home-manager.users.rxsl = {	
- 				  imports = [ ../../../home/default.nix ];
+ 				  imports = [ 
+				   	../../../home/default.nix
+				   ];
 				};
 				home-manager.backupFileExtension = "backup";
 			}

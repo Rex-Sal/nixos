@@ -77,9 +77,9 @@
 
             zl = "z && clear";
 
-            #vim = "nvim";
-            #v = "nvim";
-            vf = "vim $(fzf)";
+            vim = "nvim";
+            v = "nvim";
+            vf = "nvim $(fzf)";
 
             fetch = "fastfetch";
 
