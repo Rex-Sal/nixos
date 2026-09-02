@@ -1,30 +1,30 @@
 { lib, pkgs, ...}: {
-	programs.nixvim = {
-	  colorschemes.catppuccin.enable = true;
-	  opts = {
-	    #updatetime = 100;
-	    relativenumber = true;
-	    splitbelow = true;
-	    splitright = true;
-	    scrolloff = 4;
+    programs.nixvim = {
+	      colorschemes.catppuccin.enable = true;
+	      opts = {
+	          #updatetime = 100;
+            relativenumber = true;
+            splitbelow = true;
+            splitright = true;
+            scrolloff = 4;
 
-	    autoindent = true;
-	    clipboard = "unnamedplus";
-	    expandtab = true;
-	    shiftwidth = 4;
-	    textwidth = 120;
-	    smartindent = false;
-	    tabstop = 2;
+            autoindent = true;
+            clipboard = "unnamedplus";
+            expandtab = true;
+            shiftwidth = 4;
+            textwidth = 120;
+            smartindent = false;
+            tabstop = 2;
 
-	    ignorecase = true;
-	    incsearch = true;
-	    smartcase = true;
-	    wildmode = "list:longest";
+            ignorecase = true;
+            incsearch = true;
+            smartcase = true;
+            wildmode = "list:longest";
 
-	    swapfile = false;
-	    undofile = true;
+            swapfile = false;
+            undofile = true;
 
-	    termguicolors = lib.mkForce pkgs.stdenv.isLinux;
+            termguicolors = lib.mkForce pkgs.stdenv.isLinux;
+	      };
 	  };
-	};
 }

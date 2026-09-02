@@ -1,18 +1,18 @@
 {
     programs.kitty = {
 	      enable = true;
-              # ThemeFile values located at https://github.com/kovidgoyal/kitty-themes/tree/master/themes
+        # ThemeFile values located at https://github.com/kovidgoyal/kitty-themes/tree/master/themes
 	      themeFile = "Catppuccin-Mocha";
-              #themeFile = "BirdsOfParadise";
-              #themeFile = "Espresso_Libre";
-              #themeFile = "GruvboxMaterialDarkMedium";
+        #themeFile = "BirdsOfParadise";
+        #themeFile = "Espresso_Libre";
+        #themeFile = "GruvboxMaterialDarkMedium";
 	      settings = {
 	          enable_audio_bell = false;
 	          confirm_os_window_close = 0;
 	          background_opacity = "1.0";
 	          #background_blur = 5;
 	          symbol_map = let  #  ¯\_(ツ)_/¯ It's in the wiki. Looks like it maps these UTF values to nerd symbols
-                  mappings = [
+                mappings = [
                     "U+23FB-U+23FE"
                     "U+2B58"
                     "U+E200-U+E2A9"
@@ -31,9 +31,9 @@
                     "U+E000-U+E00A"
                     "U+F300-U+F313"
                     "U+E5FA-U+E62B"
-                  ];
+                ];
 	          in
             (builtins.concatStringsSep "," mappings) + " Symbols Nerd Font";
-	    };
+        };
     };
 }
