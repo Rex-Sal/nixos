@@ -88,15 +88,13 @@
                 "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
                 "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
                 "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
-                /*
-                "XF86AudioPrev".spawn-sh = 
-                "XF86AudioPlay".spawn-sh = 
-                "XF86AudioNext".spawn-sh = 
-                */
+                "XF86AudioPrev".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media previous";
+                "XF86AudioPlay".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media playPause";
+                "XF86AudioNext".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media next";
                 "XF86MonBrightnessDown".spawn-sh = "brightnessctl set 5%-"; 
                 "XF86MonBrightnessUp".spawn-sh = "brightnessctl set 5%+"; 
                 "Print".spawn-sh = "niri msg action screenshot";
-                "XF86AudioMedia".spawn-sh = lib.getExe pkgs.fuzzel;
+                "XF86AudioMedia".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             };
         };
     };

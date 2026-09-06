@@ -39,6 +39,7 @@
             libbluray # library to access Blu-Ray disks for playback
             
             usbutils
+            zoxide
         ];        
     };
 }

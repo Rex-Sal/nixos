@@ -111,7 +111,7 @@
 	    defaultUserShell = pkgs.zsh;
 		    users."rxsl" = {
 			    isNormalUser = true;
-			    description = "rxsl";
+			    description = "nixos";
 			    extraGroups = [ "video" "audio" "networkmanager" "wheel" "input" "uninput" "libvirtd" "scanner" "lp" ];
 			    packages = with pkgs; [
 			    #  thunderbird
