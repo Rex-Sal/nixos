@@ -9,6 +9,7 @@
 	      self.nixosModules.bluetooth
 	      self.nixosModules.steam
 	      self.nixosModules.environment
+	      self.nixosModules.files
 	    ];
 
 	  # Bootloader.
@@ -65,6 +66,15 @@
 	  # Enable CUPS to print documents.
 	  services.printing.enable = true;
 
+    hardware.sane = {
+        enable = true;
+        extraBackends = [ pkgs.sane-airscan ];
+    };
+    # Required for network/WSD/airscan discovery and USB-connected scanners
+    services.udev.packages = [ pkgs.sane-airscan ];
+    services.ipp-usb.enable = true; # If connected via USB or IPP-over-USB
+
+
 	  # Enable sound with pipewire.
 	  services.pulseaudio.enable = false;
 	  security.rtkit.enable = true;
@@ -91,7 +101,7 @@
 		    users."rxsl" = {
 			    isNormalUser = true;
 			    description = "rxsl";
-			    extraGroups = [ "video" "audio" "networkmanager" "wheel" "input" "uninput" "libvirtd" ];
+			    extraGroups = [ "video" "audio" "networkmanager" "wheel" "input" "uninput" "libvirtd" "scanner" "lp" ];
 			    packages = with pkgs; [
 			    #  thunderbird
 			    ];
@@ -113,6 +123,12 @@
 	    wget
 	    brightnessctl
 	    swaybg
+      nautilus
+      hunspell # active spell check in LibreOffice
+            hunspellDicts.en_US
+            hunspellDicts.en_US-large
+     libreoffice-qt
+     simple-scan
 	  ];
 
 	  nix = {

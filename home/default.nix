@@ -17,5 +17,8 @@
 		    homeDirectory = "/home/rxsl";
 		    stateVersion = "26.05";
 	  };
+    services.udiskie = {
+        enable = true;
+    };
 }
 
