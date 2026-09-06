@@ -8,6 +8,7 @@
         #themeFile = "GruvboxMaterialDarkMedium";
 	      settings = {
 	          enable_audio_bell = false;
+            hide_window_decorations = "yes";
 	          confirm_os_window_close = 0;
 	          background_opacity = "1.0";
 	          #background_blur = 5;

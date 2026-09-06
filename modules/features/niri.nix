@@ -30,7 +30,7 @@
 			              scroll-method = "two-finger";
 			              middle-emulation = _:{};
 		            };
-		            focus-follows-mouse = _:{};
+		            #focus-follows-mouse = _:{};
 		            warp-mouse-to-focus = _:{};
 	          };
 	
@@ -96,6 +96,7 @@
                 "XF86MonBrightnessDown".spawn-sh = "brightnessctl set 5%-"; 
                 "XF86MonBrightnessUp".spawn-sh = "brightnessctl set 5%+"; 
                 "Print".spawn-sh = "niri msg action screenshot";
+                "XF86AudioMedia".spawn-sh = lib.getExe pkgs.fuzzel;
             };
         };
     };

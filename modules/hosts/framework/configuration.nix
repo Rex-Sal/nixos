@@ -10,6 +10,8 @@
 	      self.nixosModules.steam
 	      self.nixosModules.environment
 	      self.nixosModules.files
+	      self.nixosModules.brave
+	      self.nixosModules.morePackages
 	    ];
 
 	  # Bootloader.
@@ -74,7 +76,16 @@
     services.udev.packages = [ pkgs.sane-airscan ];
     services.ipp-usb.enable = true; # If connected via USB or IPP-over-USB
 
+    services.upower = {
+        enable = true;
+        percentageLow = 20;
+        percentageCritical = 5;
+        percentageAction = 3;
+        criticalPowerAction = "Hibernate";
+    };
 
+    services.tailscale.enable = true;
+    
 	  # Enable sound with pipewire.
 	  services.pulseaudio.enable = false;
 	  security.rtkit.enable = true;
@@ -129,6 +140,10 @@
             hunspellDicts.en_US-large
      libreoffice-qt
      simple-scan
+     pfetch-rs
+     brave
+     qt6Packages.qt6ct
+     libsForQt5.qt5ct
 	  ];
 
 	  nix = {

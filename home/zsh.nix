@@ -62,10 +62,8 @@
 				    flakeDir = "~/nix";
 			  in {
 
-            please = "sudo";
             rebuild = "sudo nixos-rebuild switch --flake ~/nix#framework";
-            #update = "nix flake update ${flakeDir}";
-            #upgrade = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+            upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nix#framework";
 
             l = "lsd -lh"; # replaces "l = 'lsd -alh'
             ls = "lsd";
@@ -90,7 +88,6 @@
             dev = "devenv shell";
             webdev = "devenv shell && codium";
             flake = "[ -f ./flake.nix ] && nvim ./flake.nix || echo 'flake.nix not found in the current directory'"; 
-            #obsidian  = "obsidian --disable-gpu";
             pipes = "pipes.sh";
 
         };

@@ -9,7 +9,7 @@
     	  ./tmux.nix
 	      ./mako.nix
 	      ./swayidle.nix
-	      ./chromium.nix
+	      #./chromium.nix
 	      ./nixvim/default.nix
 	  ];
 	  home = {
