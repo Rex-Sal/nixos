@@ -15,7 +15,7 @@
 	              (lib.getExe self'.packages.myNoctalia)
 	              (lib.getExe pkgs.mako)
             ];
-	          spawn-sh-at-startup = [ "swaybg -i ~/Pictures/amz1x6hewomh1.jpeg -m fill" ];
+	          #spawn-sh-at-startup = [ "swaybg -i ~/Pictures/amz1x6hewomh1.jpeg -m fill" ];
             xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
 	          input = {
