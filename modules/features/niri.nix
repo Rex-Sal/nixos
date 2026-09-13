@@ -13,8 +13,8 @@
             settings = {
                 spawn-at-startup = [ 
 	              (lib.getExe self'.packages.myNoctalia)
-	              (lib.getExe pkgs.mako)
-            ];
+	              #(lib.getExe pkgs.mako)
+                ];
 	          #spawn-sh-at-startup = [ "swaybg -i ~/Pictures/amz1x6hewomh1.jpeg -m fill" ];
             xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
@@ -34,6 +34,9 @@
 		            warp-mouse-to-focus = _:{};
 	          };
 	
+            hotkey-overlay = {
+                skip-at-startup = _:{};
+            };
         
             layout = {
                 focus-ring = {
@@ -54,11 +57,16 @@
 
 	              struts = {
                     left = 20;
-                    right = 20;
+                    right = 10;
                     top = 10;
                     bottom = 10;
                 };
 	          };
+
+            window-rule = {
+                clip-to-geometry = true;
+                geometry-corner-radius = 12;
+            };
 
             binds = {
                 "super+Return".spawn-sh = lib.getExe pkgs.kitty;
@@ -84,6 +92,9 @@
                 "super+Shift+J".move-window-down = _:{};
                 "super+Shift+K".move-window-up = _:{};
                 "super+Shift+L".move-column-right = _:{};
+
+                "super+Alt+K".focus-workspace-up = _:{};
+                "super+Alt+J".focus-workspace-down = _:{};
 
                 "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
                 "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";

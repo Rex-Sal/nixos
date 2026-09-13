@@ -29,16 +29,6 @@
       "widgets": {
         "left": [
           {
-            "colorizeSystemIcon": "none",
-            "colorizeSystemText": "none",
-            "customIconPath": "",
-            "enableColorization": false,
-            "icon": "rocket",
-            "iconColor": "none",
-            "id": "Launcher",
-            "useDistroLogo": false
-          },
-          {
             "characterCount": 2,
             "colorizeIcons": false,
             "emptyColor": "secondary",
@@ -148,7 +138,7 @@
             "showPowerProfiles": false
           },
           {
-            "displayMode": "onhover",
+            "displayMode": "alwaysShow",
             "iconColor": "none",
             "id": "Volume",
             "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -565,13 +555,13 @@
     },
     "notifications": {
       "enabled": true,
-      "enableMarkdown": false,
-      "density": "default",
+      "enableMarkdown": true,
+      "density": "compact",
       "monitors": [],
       "location": "top_right",
       "overlayLayer": true,
       "backgroundOpacity": 1,
-      "respectExpireTimeout": false,
+      "respectExpireTimeout": true,
       "lowUrgencyDuration": 3,
       "normalUrgencyDuration": 8,
       "criticalUrgencyDuration": 15,
@@ -582,7 +572,7 @@
         "critical": true
       },
       "sounds": {
-        "enabled": false,
+        "enabled": true,
         "volume": 0.5,
         "separateSounds": false,
         "criticalSoundFile": "",
@@ -714,7 +704,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1787879343000
+      "lastSeenTs": 1788795655000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

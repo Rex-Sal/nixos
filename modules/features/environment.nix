@@ -11,6 +11,7 @@
             XDG_CONFIG_HOME = "$HOME/.config";
             XDG_DATA_HOME = "$HOME/.local/share";
             XDG_STATE_HOME = "$HOME/.local/state";
+            QT_QPA_PLATFORMTHEME = "gtk3";
 
             XDG_BIN_HOME = "$HOME/.loca/bin";
 
@@ -20,6 +21,8 @@
 	          EDITOR = "nvim"; 
             SCREENSHOT_DIR = "$HOME/Pictures/Screenshots";
 	      };
+
+        environment.localBinInPath = true;
 	  };
  }
 

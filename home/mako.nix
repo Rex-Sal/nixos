@@ -1,7 +1,8 @@
 {
     services.mako = {
-        enable = true;
-
+        enable = false;
+        
+        /*
         settings = {
             anchor = "top-right";
             width = 400;
@@ -30,6 +31,7 @@
             markup = true;
             actions = true;
         };
+        */
     };
 }
 

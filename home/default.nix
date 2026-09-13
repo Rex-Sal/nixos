@@ -7,10 +7,11 @@
 	      ./lsd/lsd.nix
 	      ./starship/starship.nix
     	  ./tmux.nix
-	      ./mako.nix
+	      #./mako.nix
 	      ./swayidle.nix
 	      #./chromium.nix
 	      ./nixvim/default.nix
+        ./vscodium.nix
 	  ];
 	  home = {
 		    username = "rxsl";

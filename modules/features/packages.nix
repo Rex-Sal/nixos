@@ -11,7 +11,7 @@
             blockbench
 
             # Internet
-            discord
+            vesktop
             syncthing
             telegram-desktop
 

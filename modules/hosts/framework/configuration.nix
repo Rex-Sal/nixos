@@ -12,6 +12,7 @@
 	      self.nixosModules.files
 	      self.nixosModules.brave
 	      self.nixosModules.morePackages
+	      self.nixosModules.vscodium
 	    ];
 
 	  # Bootloader.
@@ -56,7 +57,7 @@
 	  services.xserver.enable = true;
 
 	  # Enable the GNOME Desktop Environment.
-	  services.xserver.displayManager.gdm.enable = true;
+	  services.displayManager.gdm.enable = true;
 	  #services.xserver.desktopManager.gnome.enable = true;
 
 	  # Configure keymap in X11
@@ -144,6 +145,7 @@
      brave
      qt6Packages.qt6ct
      libsForQt5.qt5ct
+     obsidian
 	  ];
 
 	  nix = {
