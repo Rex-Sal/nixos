@@ -70,8 +70,7 @@
 
             binds = {
                 "super+Return".spawn-sh = lib.getExe pkgs.kitty;
-                "super+D".spawn-sh = lib.getExe pkgs.fuzzel;
-                "super+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+                "super+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
                 "super+Q".close-window = _:{};
                 "super+F".maximize-column = _:{};
                 "super+W".toggle-column-tabbed-display = _:{};

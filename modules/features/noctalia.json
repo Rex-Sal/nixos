@@ -578,7 +578,7 @@
         "criticalSoundFile": "",
         "normalSoundFile": "",
         "lowSoundFile": "",
-        "excludedApps": "discord,firefox,chrome,chromium,edge"
+        "excludedApps": "discord,firefox,chrome,chromium,edge,vesktop"
       },
       "enableMediaToast": false,
       "enableKeyboardLayoutToast": true,
@@ -704,7 +704,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1788795655000
+      "lastSeenTs": 1788796265000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
