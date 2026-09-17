@@ -62,8 +62,8 @@
 				    flakeDir = "~/nix";
 			  in {
 
-            rebuild = "sudo nixos-rebuild switch --flake ~/nix#framework";
-            upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nix#framework";
+            rebuild = "sudo nixos-rebuild switch --flake ~/nix#$FLAKE_PROFILE";
+            upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nix#$FLAKE_PROFILE";
 
             l = "lsd -lh"; # replaces "l = 'lsd -alh'
             ls = "lsd";

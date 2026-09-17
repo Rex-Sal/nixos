@@ -12,6 +12,7 @@
 	      #./chromium.nix
 	      ./nixvim/default.nix
         ./vscodium.nix
+        #./steam.nix
 	  ];
 	  home = {
 		    username = "rxsl";
@@ -21,5 +22,14 @@
     services.udiskie = {
         enable = true;
     };
+    
+    # Allows for Steam to open via Noctalia-shell launcher
+    xdg.desktopEntries.steam = {
+        name = "Steam";
+        exec = "sh -c \"steam %U\"";
+        icon = "steam";
+        type = "Application";
+    };
+    
 }
 
