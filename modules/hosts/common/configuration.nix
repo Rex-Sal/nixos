@@ -13,6 +13,7 @@
 	      self.nixosModules.brave
 	      self.nixosModules.morePackages
 	      self.nixosModules.vscodium
+	      self.nixosModules.syncthing
 	    ];
 
 	  # Bootloader.
@@ -65,6 +66,8 @@
 	    layout = "us";
 	    variant = "";
 	  };
+
+    services.ivpn.enable = true;
 
 	  # Enable CUPS to print documents.
 	  services.printing.enable = true;
