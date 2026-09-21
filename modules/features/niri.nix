@@ -1,13 +1,31 @@
-{ self, inputs, self', lib,  ... }: {
+{ self, inputs, config, pkgs, self', lib,  ... }: {
+
 
     flake.nixosModules.niri = { pkgs, lib, ... }: {
         programs.niri = {
-        enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+            enable = true;
+            package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
         };
     };
 	
-    perSystem = { pkgs, lib, self', ... }: {
+    perSystem = { pkgs, lib, self', ... }: 
+    {
+        packages.xwayland-satellite = pkgs.xwayland-satellite.overrideAttrs (old: rec {
+        version = "0.8.1";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "Supreeeme";
+          repo = "xwayland-satellite";
+          rev = "536bd32"; # full hash or "v0.8.1" is safer
+          hash = "sha256-BUE41HjLIGPjq3U8VXPjf8asH8GaMI7FYdgrIHKFMXA=";
+        };
+
+        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+          inherit (old) pname;
+          inherit version src;
+          hash = "sha256-16L6gsvze+m7XCJlOA1lsPNELE3D364ef2FTdkh0rVY=";
+        };
+      });
         packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
             inherit pkgs;
             settings = {
@@ -16,7 +34,11 @@
 	              #(lib.getExe pkgs.mako)
                 ];
 	          #spawn-sh-at-startup = [ "swaybg -i ~/Pictures/amz1x6hewomh1.jpeg -m fill" ];
-            xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+
+
+            xwayland-satellite.path = lib.getExe self'.packages.xwayland-satellite; #lib.getExe
+            #xwayland-satellite.path = lib.getExe pkgsOld.xwayland-satellite; #lib.getExe
 
 	          input = {
 		            keyboard.xkb.layout = "us, ua";
