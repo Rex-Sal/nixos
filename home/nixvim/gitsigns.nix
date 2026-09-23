@@ -1,3 +1,5 @@
+# Git status integration within neovim buffer
+
 {
   programs.nixvim.plugins.gitsigns = {
     enable = true;

@@ -67,6 +67,11 @@
 	    variant = "";
 	  };
 
+    services.gvfs = {
+        enable = true;
+        package = pkgs.gvfs;
+    };
+
     services.ivpn.enable = true;
 
 	  # Enable CUPS to print documents.
@@ -153,6 +158,11 @@
      libsForQt5.qt5ct
      obsidian
      keepassxc
+    
+    python3
+    rustc
+    cargo
+
 	  ];
 
 	  nix = {
