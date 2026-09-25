@@ -26,6 +26,7 @@
             cmatrix
             cowsay
             figlet
+            hyfetch
             pipes
 
             # Multimedia Management
@@ -64,6 +65,7 @@
             pika-backup
             
             usbutils
+            nautilus
             zoxide
         ];        
     };

@@ -79,7 +79,6 @@
             v = "nvim";
             vf = "nvim $(fzf)";
 
-            fetch = "fastfetch";
 
             kanata-fix = "modprobe uinput"; # in case kanata stops being enabled, run this
 
@@ -88,6 +87,7 @@
             dev = "devenv shell";
             webdev = "devenv shell && codium";
             flake = "[ -f ./flake.nix ] && nvim ./flake.nix || echo 'flake.nix not found in the current directory'"; 
+            fetch = "hyfetch";
             pipes = "pipes.sh";
 
         };

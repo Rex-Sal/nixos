@@ -159,6 +159,7 @@
      obsidian
      keepassxc
     
+    gcc
     python3
     rustc
     cargo
