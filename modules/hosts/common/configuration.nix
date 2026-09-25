@@ -13,7 +13,7 @@
 	      self.nixosModules.brave
 	      self.nixosModules.morePackages
 	      self.nixosModules.vscodium
-	      self.nixosModules.syncthing
+	      #self.nixosModules.syncthing
 	    ];
 
 	  # Bootloader.
