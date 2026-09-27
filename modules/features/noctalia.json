@@ -556,7 +556,7 @@
     "notifications": {
       "enabled": true,
       "enableMarkdown": true,
-      "density": "compact",
+      "density": "default",
       "monitors": [],
       "location": "top_right",
       "overlayLayer": true,

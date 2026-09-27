@@ -62,8 +62,12 @@
 				    flakeDir = "~/nix";
 			  in {
 
-            rebuild = "sudo nixos-rebuild switch --flake ~/nix#$FLAKE_PROFILE";
-            upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nix#$FLAKE_PROFILE";
+            rebuild = "nix run nixpkgs#noctalia-shell ipc call state all > ~/nix/modules/features/noctalia.json && \
+            sudo nixos-rebuild switch --flake ~/nix#$FLAKE_PROFILE";
+
+            upgrade = "nix run nixpkgs#noctalia-shell ipc call state all > ~/nix/modules/features/noctalia.json && \
+            sudo nixos-rebuild switch --upgrade --flake ~/nix#$FLAKE_PROFILE";
+
 
             l = "lsd -lh"; # replaces "l = 'lsd -alh'
             ls = "lsd";
