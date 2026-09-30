@@ -30,8 +30,23 @@
         icon = "steam";
         type = "Application";
     };
+ 
+    gtk = {
+        enable = true;
+        theme.name = "Adwaita-dark";
+    };
 
-    
+    dconf.settings = {
+        "org/gnome/desktop/interface" = {
+            color-scheme = "prefer-dark";
+        };
+    };
+
+    qt = {
+        enable = true;
+        platformTheme.name = "gtk";
+        style.name = "adwaita-dark";
+    };
     
 }
 
