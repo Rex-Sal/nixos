@@ -117,6 +117,20 @@
                 "super+Alt+K".focus-workspace-up = _:{};
                 "super+Alt+J".focus-workspace-down = _:{};
 
+                /*
+                "F1".spawn-sh = "brightnessctl set 5%-"; 
+                "F2".spawn-sh = "brightnessctl set 5%+"; 
+                "F3".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+                "F4".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+                "F5".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+                
+                "F5".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media previous";
+                "F6".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media playPause";
+                "F7".spawn-sh = "${lib.getExe self'.packages.myNoctalia} msg media next";
+                "F8".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+                */
+               
+
                 "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
                 "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
                 "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
