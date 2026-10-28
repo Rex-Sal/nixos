@@ -683,28 +683,28 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-3": "/home/rxsl/Pictures/Wallpapers/16-9 Wallpapers/PCB Wallpaper.jpg"
+      "eDP-1": "/home/rxsl/Pictures/Wallpapers/amz1x6hewomh1.jpeg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "DP-3": {
-        "name": "DP-3",
+      "eDP-1": {
+        "name": "eDP-1",
         "connected": true,
-        "scale": 1,
-        "width": 3440,
-        "height": 1440,
+        "scale": 2,
+        "width": 1440,
+        "height": 960,
         "x": 0,
         "y": 0,
-        "physical_width": 820,
-        "physical_height": 350,
-        "refresh_rate": 99982,
+        "physical_width": 290,
+        "physical_height": 190,
+        "refresh_rate": 120000,
         "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1789829285000
+      "lastSeenTs": 1788796265000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
