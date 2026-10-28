@@ -31,6 +31,8 @@
 
             # Multimedia Management
             asunder # CD ripper
+            audacity
+            davinci-resolve
             calibre
             easyeffects
             filebot
@@ -48,7 +50,7 @@
             prismlauncher
             godot
             gzdoom
-            pokemmo-installer
+            pokemmo
             (retroarch.withCores (cores: with cores; [
                 snes9x
                 mgba

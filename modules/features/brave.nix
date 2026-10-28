@@ -9,7 +9,7 @@ flake.nixosModules.brave = { pkgs, lib, ... }: {
             defaultSearchProviderSuggestURL = "https://kagi.com/api/v0/search/suggestions?q={searchTerms}";
             #homepageLocation = "";
             extensions = [
-                "ddkjiahejlhfcafbddmgiahcphecmpfh" # Ublock Origin Lite
+                #"ddkjiahejlhfcafbddmgiahcphecmpfh" # Ublock Origin Lite
                 "kbmfpngjjgdllneeigpgjifpgocmfgmb" # Reddit Enhancement Suite
                 "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect
                 "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
