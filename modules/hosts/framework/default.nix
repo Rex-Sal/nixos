@@ -3,9 +3,9 @@
 		system = "x86_64-linux";
 		specialArgs = { inherit inputs; };
 		modules = [ 
-			self.nixosModules.commonConfiguration	
-			self.nixosModules.frameworkConfiguration	
-			self.nixosModules.frameworkHardware
+			../common/configuration.nix
+			./configuration.nix
+			./hardware.nix
 			inputs.home-manager.nixosModules.home-manager
 			{
 				home-manager.useGlobalPkgs = true;
@@ -17,6 +17,7 @@
 				home-manager.users.rxsl = {	
  				  imports = [ 
 				   	../../../home/default.nix
+            inputs.noctalia.homeModules.default
 				   ];
 				};
 				home-manager.backupFileExtension = "backup";

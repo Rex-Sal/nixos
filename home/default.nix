@@ -5,6 +5,7 @@
 	      ./git.nix
 	      ./zsh.nix
 	      ./lsd/lsd.nix
+        ./noctalia.nix
 	      ./starship/starship.nix
     	  ./tmux.nix
 	      #./mako.nix

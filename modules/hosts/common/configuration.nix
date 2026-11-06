@@ -1,19 +1,16 @@
-{ self, inputs, ... }: {
-	flake.nixosModules.commonConfiguration = { pkgs, lib, ... }: {
+{ pkgs, lib, ... }: {
 	  imports =
 	    [ # Include the results of the hardware scan.
-	      #self.nixosModules.frameworkHardware
-	      self.nixosModules.niri
-	      self.nixosModules.kanata
-	      self.nixosModules.fonts
-	      self.nixosModules.bluetooth
-	      self.nixosModules.steam
-	      self.nixosModules.environment
-	      self.nixosModules.files
-	      self.nixosModules.brave
-	      self.nixosModules.morePackages
-	      self.nixosModules.vscodium
-	      #self.nixosModules.syncthing
+        ../../features/niri.nix
+	      ../../features/kanata.nix
+	      ../../features/fonts.nix
+        ../../features/bluetooth.nix
+        ../../features/steam.nix
+        ../../features/environment.nix
+        ../../features/files.nix
+        ../../features/brave.nix
+        ../../features/packages.nix
+        ../../features/vscodium.nix
 	    ];
 
 	  # Bootloader.
@@ -30,6 +27,11 @@
 	  # Configure network proxy if necessary
 	  # networking.proxy.default = "http://user:password@proxy:port/";
 	  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    nix.settings = {
+        extra-substituters = [ "https://noxtalia.cachix.org" ];
+        extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+    };
 
 	  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -201,6 +203,4 @@
 	  # Before changing this value read the documentation for this option
 	  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 	  system.stateVersion = "26.05"; # Did you read the comment?
-
-	};
 }

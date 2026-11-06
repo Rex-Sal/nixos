@@ -1,8 +1,6 @@
 {
-    #test
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     
         home-manager = {
             url = "github:nix-community/home-manager";
@@ -13,6 +11,13 @@
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        niri-flake = {
+            url = "github:sodiboo:niri-flake";
+            inputs.nixpkds.follows = "nixpkgs";
+        };
+
+        noctalia.url = "github:noctalia-dev/noctalia/cachix";
         
         flake-parts.url = "github:hercules-ci/flake-parts";
         
