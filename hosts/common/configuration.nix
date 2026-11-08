@@ -1,19 +1,14 @@
-{ self, inputs, ... }: {
-	flake.nixosModules.commonConfiguration = { pkgs, lib, ... }: {
+{ pkgs, lib, ... }: {
 	  imports =
-	    [ # Include the results of the hardware scan.
-	      #self.nixosModules.frameworkHardware
-	      self.nixosModules.niri
-	      self.nixosModules.kanata
-	      self.nixosModules.fonts
-	      self.nixosModules.bluetooth
-	      self.nixosModules.steam
-	      self.nixosModules.environment
-	      self.nixosModules.files
-	      self.nixosModules.brave
-	      self.nixosModules.morePackages
-	      self.nixosModules.vscodium
-	      #self.nixosModules.syncthing
+	    [
+        ../../modules/system/bluetooth.nix
+        #../../modules/system/brave.nix
+        ../../modules/system/environment.nix
+	      ../../modules/system/fonts.nix
+        ../../modules/system/kanata.nix
+        ../../modules/system/packages.nix
+        ../../modules/system/steam.nix
+        #../../modules/system/vscodium.nix
 	    ];
 
 	  # Bootloader.
@@ -30,6 +25,13 @@
 	  # Configure network proxy if necessary
 	  # networking.proxy.default = "http://user:password@proxy:port/";
 	  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    /*
+    nix.settings = {
+        extra-substituters = [ "https://noxtalia.cachix.org" ];
+        extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+    };
+    */
 
 	  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -61,6 +63,8 @@
 	  services.displayManager.gdm.enable = true;
 	  #services.xserver.desktopManager.gnome.enable = true;
 
+    programs.niri.enable = true;
+
 	  # Configure keymap in X11
 	  services.xserver.xkb = {
 	    layout = "us";
@@ -72,6 +76,8 @@
         enable = true;
         package = pkgs.gvfs;
     };
+
+    services.udisks2.enable = true;
 
     services.ivpn.enable = true;
 
@@ -85,6 +91,8 @@
     # Required for network/WSD/airscan discovery and USB-connected scanners
     services.udev.packages = [ pkgs.sane-airscan ];
     services.ipp-usb.enable = true; # If connected via USB or IPP-over-USB
+
+    services.power-profiles-daemon.enable = true;
 
     services.upower = {
         enable = true;
@@ -154,7 +162,6 @@
      libreoffice-qt
      simple-scan
      pfetch-rs
-     brave
      qt6Packages.qt6ct
      libsForQt5.qt5ct
      obsidian
@@ -201,6 +208,4 @@
 	  # Before changing this value read the documentation for this option
 	  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 	  system.stateVersion = "26.05"; # Did you read the comment?
-
-	};
 }

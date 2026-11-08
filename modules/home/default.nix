@@ -1,18 +1,19 @@
-{ inputs, config, pkgs, ... }: {
+{
     imports = [ 
-	      ./kitty.nix
 	      ./connect.nix
 	      ./git.nix
-	      ./zsh.nix
+	      ./kitty.nix
+        ./librewolf.nix
 	      ./lsd/lsd.nix
-	      ./starship/starship.nix
-    	  ./tmux.nix
 	      #./mako.nix
-	      ./swayidle.nix
-	      #./chromium.nix
 	      ./nixvim/default.nix
-        ./vscodium.nix
+        ./noctalia.nix
+	      ./starship/starship.nix
         #./steam.nix
+	      #./swayidle.nix
+    	  ./tmux.nix
+        #./vscodium.nix
+	      ./zsh.nix
 	  ];
 	  home = {
 		    username = "rxsl";
@@ -30,6 +31,8 @@
         icon = "steam";
         type = "Application";
     };
+
+    xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
  
     gtk = {
         enable = true;

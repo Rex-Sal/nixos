@@ -2,7 +2,7 @@
     services.swayidle =
 		let
 		    # Lock command
-	 	    lock = "${lib.getExe myNoctalia} ipc call lockScreen lock";
+	 	    lock = "noctalia ipc call lockScreen lock";
 		    # TODO: modify "display" function based on your window manager
 		    # Sway
 		    # display = status: "${pkgs.sway}/bin/swaymsg 'output * power ${status}'";

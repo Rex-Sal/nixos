@@ -1,6 +1,4 @@
-{ self, inputs, ... }:{
-    flake.nixosModules.fonts = { pkgs, lib, ... }: {
-		
+{ pkgs, lib, ... }: {		
 	      environment.systemPackages = with pkgs; [
 		        nerd-font-patcher
 	      ];
@@ -19,5 +17,4 @@
 		        noto-fonts-cjk-sans
 		        #(nerd-fonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
         ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues nerd-fonts); 
-    };
 }
