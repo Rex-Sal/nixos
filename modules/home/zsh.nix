@@ -59,15 +59,9 @@
 
 		    shellAliases = {
 
-            rebuild = "nix run nixpkgs#noctalia-shell ipc call state all > ~/nix/modules/features/noctalia.json && \
-            sudo nixos-rebuild switch --flake ~/nix#$FLAKE_PROFILE";
-
-            upgrade = "nix run nixpkgs#noctalia-shell ipc call state all > ~/nix/modules/features/noctalia.json && \
-            sudo nixos-rebuild switch --upgrade --flake ~/nix#$FLAKE_PROFILE";
-
-            desktop = "sudo nixos-rebuild switch --upgrade --flake ~/nix#desktop";
-            framework = "sudo nixos-rebuild switch --upgrade --flake ~/nix#framework";
-            #noctalis-rebuild = "noctalia ipc call state all > ~/nix/modules/home/noctalia.json";
+            rebuild = "sudo nixos-rebuild switch --flake ~/nix#$FLAKE_PROFILE";
+            upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nix#$FLAKE_PROFILE";
+            noctalia-rebuild = "noctalia config export > ~/nix/modules/home/noctalia/config.toml";
 
 
             l = "lsd -lh"; # replaces "l = 'lsd -alh'

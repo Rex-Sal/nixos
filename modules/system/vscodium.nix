@@ -42,12 +42,14 @@
                 version = "1.8.0";
                 sha256 = "86de969b55fbce27a7f9f8ccbfceb8a8ff8ecf833a5fa7f64578eb4e1511afa7";
             }
+            /*
             {
                 name = "vscode-thunder-client";
                 publisher = "rangav";
                 version = "2.33.2";
                 sha256 = "43e8c8e1d27846b660ff803b08a99a28c1851a3e953a2fbdb826d6e5d7e509f8";
             }
+            */
             {
                 name = "prettier-sql-vscode";
                 publisher = "inferrinizzard";

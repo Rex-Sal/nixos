@@ -8,7 +8,7 @@
         ../../modules/system/kanata.nix
         ../../modules/system/packages.nix
         ../../modules/system/steam.nix
-        #../../modules/system/vscodium.nix
+        ../../modules/system/vscodium.nix
 	    ];
 
 	  # Bootloader.

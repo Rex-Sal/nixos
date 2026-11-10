@@ -7,12 +7,12 @@
 	      ./lsd/lsd.nix
 	      #./mako.nix
 	      ./nixvim/default.nix
-        ./noctalia.nix
+        ./noctalia/noctalia.nix
 	      ./starship/starship.nix
         #./steam.nix
 	      #./swayidle.nix
     	  ./tmux.nix
-        #./vscodium.nix
+        ./vscodium.nix
 	      ./zsh.nix
 	  ];
 	  home = {
