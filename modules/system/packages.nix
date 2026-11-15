@@ -78,6 +78,7 @@ in
 
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default # default, beta, twilight, or twilight-official
         xwayland-satellite-packages
+        devenv
 
         alacritty            
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default

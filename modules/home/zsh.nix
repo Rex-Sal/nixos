@@ -47,6 +47,7 @@
 			      # Shell integrations
 			      eval "$(fzf --zsh)"
 			      eval "$(zoxide init zsh)"
+            eval "$(devenv hook zsh)"
 
 			      # Echos a random pokemon when opening a new shell
 			      pokemon-colorscripts --random --no-title
